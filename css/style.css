@@ -1,0 +1,158 @@
+:root {
+    /* Cores do tema */
+    --cor-primaria: #2563EB;
+    --cor-primaria-escura: #1E40AF;
+    --cor-secundaria: #64748B;
+    --cor-fundo: #F8FAFC;
+    --cor-superficie: #FFFFFF;
+    --cor-texto: #1F2937;
+    --cor-texto-secundario: #6B7280;
+    --cor-sucesso: #16A34A;
+    /* Niveis tipograficos */
+    --fonte-pequena: 0.75rem;
+    --fonte-secundaria: 0.875rem;
+    --fonte-base: 1rem;
+    --fonte-subtitulo: 1.5rem;
+    --fonte-titulo: 2rem;
+    /* Espaçamento */
+    --espaco-xs: 8px;
+    --espaco-sm: 16px;
+    --espaco-md: 24px;
+    --espaco-lg: 32px;
+    --espaco-xl: 48px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--fonte-base);
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-primaria);
+    padding: var(--espaco-md);
+    color: var(--cor-superficie);
+    position: relative;
+}
+
+/* Menu de navegação */
+
+nav.menu {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-sm);
+}
+
+nav.menu a {
+    color: var(--cor-superficie);
+    text-decoration: none;
+}
+
+/* Dropdown */
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-sm);
+    min-width: 200px;
+}
+
+.submenu a {
+    display: block;
+    color: var(--cor-texto) !important;
+    padding: var(--espaco-xs);
+}
+
+/* Exibe o submenu */
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+    display: block;
+}
+
+/* Sistema Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-md);
+}
+
+.projeto {
+    grid-column: span 4;
+}
+
+/* Responsividade */
+/* 1. Celulares Maiores */
+@media (min-width: 481px) and (max-width: 600px){
+    .projeto {
+        grid-column: span 12;
+    }
+}
+
+/* 2. Tablets */
+@media (min-width: 601px) and (max-width: 900px){
+    .projeto {
+        grid-column: span 6;
+    }
+}
+
+/* 3. Desktops */
+@media (min-width: 901px) and (max-width: 1200px){
+    .projeto{
+        grid-column: span 4;
+    }
+}
+
+/* Telas panorâmicas */
+@media (min-width: 1201px){
+    .projeto {
+        grid-column: span 3;
+    }
+}
+/* MENU HAMBÚRGUER */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-superficie);
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Somente celulares */
+@media (max-width: 480px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--cor-primaria);
+        padding: var(--espaco-md);
+    }
+
+    nav.menu.menu-aberto {
+        display: flex;
+    }
+}
