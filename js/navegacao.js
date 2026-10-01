@@ -19,7 +19,7 @@ if (rota === "#projetos") {
             <h2>Sobre nós</h2>
             <p>Bem-vindo ao site da ONG Esperança! Nosso objetivo é ajudar pessoas em situação de vulnerabilidade social, oferecendo apoio e recursos para melhorar suas vidas.</p>
 
-            <img src="/imagens/ong-esperanca.jpg"
+            <img src="imagens/ong-esperanca.jpg"
                  alt="Voluntários da ONG Esperança durante uma ação solidária">
         </section>
 
